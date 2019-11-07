@@ -1,18 +1,18 @@
 <?php
 	  if ( ! defined( 'ABSPATH' ) ) {
-		  exit;
+	exit;
     }
     
     add_action( 'wp_enqueue_scripts', 'bootstrap_cookie_alert_js' );
     function bootstrap_cookie_alert_js() {
         wp_register_style( 'cookie', 'https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css');
-		    wp_enqueue_style('cookie');
+	wp_enqueue_style('cookie');
 
         wp_register_script( 'cookie', 'https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js', array('jquery'), false, true);
         wp_enqueue_script('cookie');
     }
 
-    add_action( 'wp_footer', 'bootstrap_cookie_alert', 20 );
+    add_action( 'wp_footer', 'bootstrap_cookie_alert', 30 );
     function bootstrap_cookie_alert() {
         echo '
         <div class="alert text-center cookiealert" role="alert">
